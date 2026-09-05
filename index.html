@@ -60,7 +60,14 @@ button{font:inherit}
 .story-heading p{color:#a79d94;font-size:18px;font-style:italic}
 .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:7vw;align-items:center;margin:12vh 0}
 .grid.reverse{grid-template-columns:.85fr 1.15fr}
-.grid img{width:100%;height:min(70vh,650px);object-fit:cover;display:block;filter:saturate(.82)}
+.grid img,
+.story-video{
+  width:100%;
+  height:min(70vh,650px);
+  object-fit:cover;
+  display:block;
+  filter:saturate(.82);
+}
 .grid.reverse .copy{order:2}
 .copy .number{font:10px Arial,sans-serif;color:#8f8378;letter-spacing:.25em}
 .copy h3{font-size:clamp(34px,4.5vw,60px);font-weight:400;line-height:1;margin:18px 0}
@@ -98,7 +105,10 @@ button{font:inherit}
 @media(max-width:760px){
  .grid,.grid.reverse{grid-template-columns:1fr;gap:35px;margin:9vh 0}
  .grid.reverse .copy{order:0}
- .grid img{height:58vh}
+ .grid img,
+.story-video{
+  height:58vh;
+}
  #story{padding:10vh 7vw}
  .opening-title{font-size:64px}
 }
@@ -149,8 +159,11 @@ button{font:inherit}
     </header>
 
     <section class="grid">
-      <img src="images/profile2.jpg" alt="A favourite memory">
-      <div class="copy">
+  <video class="story-video" autoplay muted loop playsinline preload="metadata">
+    <source src="images/her.mp4" type="video/mp4">
+  </video>
+
+  <div class="copy">
         <div class="number">01 / THE WAY YOU ARE</div>
         <h3>Beautiful was never the whole story.</h3>
         <p>
